@@ -10,6 +10,12 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Query private var inventory: [Inventory]
+
+    /// Changes whenever something that affects expiry notifications changes.
+    private var notificationSignature: [String] {
+        inventory.map { "\($0.id)|\($0.expirationDate?.timeIntervalSince1970 ?? 0)|\($0.quantityGrams > 0)|\($0.coffeeBean?.name ?? "")" }
+    }
 
     var body: some View {
         TabView {
@@ -26,6 +32,9 @@ struct ContentView: View {
         }
         .task {
             DefaultData.seedIfNeeded(in: modelContext)
+        }
+        .task(id: notificationSignature) {
+            await ExpiryNotifications.reschedule(for: inventory)
         }
     }
 }

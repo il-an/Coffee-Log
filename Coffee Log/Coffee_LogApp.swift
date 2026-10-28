@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import UserNotifications
 
 @main
 struct Coffee_LogApp: App {
@@ -29,6 +30,10 @@ struct Coffee_LogApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+
+    init() {
+        UNUserNotificationCenter.current().delegate = ExpiryNotifications.delegate
+    }
 
     var body: some Scene {
         WindowGroup {

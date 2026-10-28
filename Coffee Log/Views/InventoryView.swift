@@ -83,9 +83,7 @@ struct InventoryFormView: View {
     @State private var bean: CoffeeBean?
     @State private var quantity: String
     @State private var daily: String
-    @State private var hasPurchaseDate: Bool
     @State private var purchaseDate: Date
-    @State private var hasExpiration: Bool
     @State private var expirationDate: Date
 
     init(inventory: Inventory?) {
@@ -93,10 +91,10 @@ struct InventoryFormView: View {
         _bean = State(initialValue: inventory?.coffeeBean)
         _quantity = State(initialValue: inventory.map { $0.quantityGrams.formatted(.number.grouping(.never)) } ?? "")
         _daily = State(initialValue: inventory?.dailyConsumptionGrams.map { $0.formatted(.number.grouping(.never)) } ?? "")
-        _hasPurchaseDate = State(initialValue: inventory?.purchaseDate != nil)
-        _purchaseDate = State(initialValue: inventory?.purchaseDate ?? .now)
-        _hasExpiration = State(initialValue: inventory?.expirationDate != nil)
-        _expirationDate = State(initialValue: inventory?.expirationDate ?? Calendar.current.date(byAdding: .month, value: 2, to: .now) ?? .now)
+        // Defaults: bought today, best within about two months.
+        let purchase = inventory?.purchaseDate ?? .now
+        _purchaseDate = State(initialValue: purchase)
+        _expirationDate = State(initialValue: inventory?.expirationDate ?? Calendar.current.date(byAdding: .month, value: 2, to: purchase) ?? purchase)
     }
 
     private func number(_ text: String) -> Double? {
@@ -114,10 +112,10 @@ struct InventoryFormView: View {
     /// Describes why the chosen dates are invalid, or nil when they are fine.
     private var dateError: String? {
         let calendar = Calendar.current
-        if hasPurchaseDate, calendar.startOfDay(for: purchaseDate) > calendar.startOfDay(for: .now) {
+        if calendar.startOfDay(for: purchaseDate) > calendar.startOfDay(for: .now) {
             return String(localized: "The purchase date can't be in the future.")
         }
-        if hasPurchaseDate, hasExpiration, calendar.startOfDay(for: expirationDate) < calendar.startOfDay(for: purchaseDate) {
+        if calendar.startOfDay(for: expirationDate) < calendar.startOfDay(for: purchaseDate) {
             return String(localized: "The expiration date must be on or after the purchase date.")
         }
         return nil
@@ -137,14 +135,8 @@ struct InventoryFormView: View {
                 LabeledTextField("Quantity (grams)", text: $quantity, prompt: "e.g., 250", isValid: quantityValid).decimalKeyboard()
                 LabeledTextField("Daily consumption (grams)", text: $daily, prompt: "e.g., 20", isValid: dailyValid).decimalKeyboard()
                 Section {
-                    Toggle("Purchase date", isOn: $hasPurchaseDate)
-                    if hasPurchaseDate {
-                        DatePicker("Purchased", selection: $purchaseDate, in: ...Date.now, displayedComponents: .date)
-                    }
-                    Toggle("Expiration date", isOn: $hasExpiration)
-                    if hasExpiration {
-                        DatePicker("Expires", selection: $expirationDate, displayedComponents: .date)
-                    }
+                    DatePicker("Purchased", selection: $purchaseDate, in: ...Date.now, displayedComponents: .date)
+                    DatePicker("Expires", selection: $expirationDate, displayedComponents: .date)
                 } footer: {
                     if let dateError {
                         Text(dateError).foregroundStyle(.red)
@@ -171,8 +163,8 @@ struct InventoryFormView: View {
         let target = inventory ?? Inventory(quantityGrams: grams)
         target.quantityGrams = grams
         target.dailyConsumptionGrams = number(daily)
-        target.purchaseDate = hasPurchaseDate ? purchaseDate : nil
-        target.expirationDate = hasExpiration ? expirationDate : nil
+        target.purchaseDate = purchaseDate
+        target.expirationDate = expirationDate
         if inventory == nil { modelContext.insert(target) }
         target.coffeeBean = bean
         dismiss()

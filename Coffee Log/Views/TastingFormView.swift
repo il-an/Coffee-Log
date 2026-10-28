@@ -15,13 +15,12 @@ struct TastingFormView: View {
     @Query(sort: \BrewMethod.name) private var methods: [BrewMethod]
     @Query private var grindSizes: [GrindSize]
 
-    // Numeric entries start at a default and can be edited freely.
-    @State private var rating = "3.5"
-    @State private var aroma = "5"
-    @State private var acidity = "5"
-    @State private var sweetness = "5"
-    @State private var body_ = "5"
-    @State private var aftertaste = "5"
+    @State private var rating = 3.5
+    @State private var aroma = 5.0
+    @State private var acidity = 5.0
+    @State private var sweetness = 5.0
+    @State private var body_ = 5.0
+    @State private var aftertaste = 5.0
     @State private var date = Date.now
     @State private var notes = ""
     @State private var selectedFlavorIDs: Set<UUID> = []
@@ -40,24 +39,10 @@ struct TastingFormView: View {
 
     private func isBlank(_ text: String) -> Bool { text.trimmingCharacters(in: .whitespaces).isEmpty }
 
-    private var ratingValue: Double? {
-        guard let value = number(rating), (0...5).contains(value) else { return nil }
-        return value
-    }
-
-    /// An attribute score: blank means "not rated", otherwise a whole number from 1 to 10.
-    private func score(_ text: String) -> Int? {
-        guard let value = Int(text.trimmingCharacters(in: .whitespaces)), (1...10).contains(value) else { return nil }
-        return value
-    }
-
-    private func isValidScore(_ text: String) -> Bool { isBlank(text) || score(text) != nil }
     private func isValidAmount(_ text: String) -> Bool { isBlank(text) || (number(text).map { $0 >= 0 } ?? false) }
 
     private var isValid: Bool {
-        ratingValue != nil
-            && [aroma, acidity, sweetness, body_, aftertaste].allSatisfy(isValidScore)
-            && (method == nil || ([dose, water, temperature].allSatisfy(isValidAmount) && (isBlank(brewTime) || brewSeconds != nil)))
+        method == nil || ([dose, water, temperature].allSatisfy(isValidAmount) && (isBlank(brewTime) || brewSeconds != nil))
     }
 
     /// Parses "m:ss" or plain seconds.
@@ -74,20 +59,16 @@ struct TastingFormView: View {
         NavigationStack {
             Form {
                 Section("Overall Rating") {
-                    LabeledTextField("Rating (0-5)", text: $rating, prompt: "3.5", isValid: ratingValue != nil)
-                        .decimalKeyboard()
+                    // No step, so any rating between 0 and 5 can be chosen.
+                    slider("Rating", value: $rating, range: 0...5, step: nil)
                     DatePicker("Date", selection: $date)
                 }
-                Section {
-                    LabeledTextField("Aroma", text: $aroma, prompt: "5", isValid: isValidScore(aroma)).integerKeyboard()
-                    LabeledTextField("Acidity", text: $acidity, prompt: "5", isValid: isValidScore(acidity)).integerKeyboard()
-                    LabeledTextField("Sweetness", text: $sweetness, prompt: "5", isValid: isValidScore(sweetness)).integerKeyboard()
-                    LabeledTextField("Body", text: $body_, prompt: "5", isValid: isValidScore(body_)).integerKeyboard()
-                    LabeledTextField("Aftertaste", text: $aftertaste, prompt: "5", isValid: isValidScore(aftertaste)).integerKeyboard()
-                } header: {
-                    Text("Tasting Attributes (1-10)")
-                } footer: {
-                    Text("Leave a field blank to skip it.")
+                Section("Tasting Attributes (1-10)") {
+                    slider("Aroma", value: $aroma, range: 1...10, step: 1)
+                    slider("Acidity", value: $acidity, range: 1...10, step: 1)
+                    slider("Sweetness", value: $sweetness, range: 1...10, step: 1)
+                    slider("Body", value: $body_, range: 1...10, step: 1)
+                    slider("Aftertaste", value: $aftertaste, range: 1...10, step: 1)
                 }
                 Section("Flavor Tags") {
                     FlowLayout {
@@ -151,6 +132,21 @@ struct TastingFormView: View {
         }
     }
 
+    private func slider(_ title: LocalizedStringKey, value: Binding<Double>, range: ClosedRange<Double>, step: Double?) -> some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(title)
+                Spacer()
+                Text(value.wrappedValue.formatted(.number.precision(.fractionLength(0...1)))).foregroundStyle(.secondary)
+            }
+            if let step {
+                Slider(value: value, in: range, step: step)
+            } else {
+                Slider(value: value, in: range)
+            }
+        }
+    }
+
     private func addFlavor() {
         let name = newFlavor.trimmingCharacters(in: .whitespaces)
         guard !name.isEmpty else { return }
@@ -166,12 +162,12 @@ struct TastingFormView: View {
 
     private func save() {
         let tasting = Tasting(
-            rating: ratingValue ?? 0,
-            aroma: score(aroma),
-            acidity: score(acidity),
-            sweetness: score(sweetness),
-            body: score(body_),
-            aftertaste: score(aftertaste),
+            rating: (rating * 10).rounded() / 10,
+            aroma: Int(aroma),
+            acidity: Int(acidity),
+            sweetness: Int(sweetness),
+            body: Int(body_),
+            aftertaste: Int(aftertaste),
             notes: notes,
             timestamp: date
         )
