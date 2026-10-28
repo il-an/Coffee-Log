@@ -11,19 +11,23 @@ import SwiftData
 @Model
 final class BrewLog: Codable, Identifiable {
     enum CodingKeys: CodingKey {
-        case id, tasting, brewMethod, dose, water, temperature, brewTime, grindSize
+        case id, brewMethod, dose, water, temperature, brewTime, grindSize
     }
     
-    var id: UUID
-    var tasting: Tasting
-    var brewMethod: BrewMethod
-    var dose: Int?
-    var water: Int?
-    var temperature: Int?
+    var id: UUID = UUID()
+    var tasting: Tasting?
+    var brewMethod: BrewMethod?
+    /// Coffee dose in grams.
+    var dose: Double?
+    /// Water in grams.
+    var water: Double?
+    /// Water temperature in °C.
+    var temperature: Double?
+    /// Brew time in seconds.
     var brewTime: Int?
     var grindSize: GrindSize?
     
-    init(id: UUID = UUID(), tasting: Tasting, brewMethod: BrewMethod, dose: Int? = nil, water: Int? = nil, temperature: Int? = nil, brewTime: Int? = nil, grindSize: GrindSize? = nil) {
+    init(id: UUID = UUID(), tasting: Tasting? = nil, brewMethod: BrewMethod? = nil, dose: Double? = nil, water: Double? = nil, temperature: Double? = nil, brewTime: Int? = nil, grindSize: GrindSize? = nil) {
         self.id = id
         self.tasting = tasting
         self.brewMethod = brewMethod
@@ -37,11 +41,10 @@ final class BrewLog: Codable, Identifiable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
-        tasting = try container.decode(Tasting.self, forKey: .tasting)
-        brewMethod = try container.decode(BrewMethod.self, forKey: .brewMethod)
-        dose = try container.decodeIfPresent(Int.self, forKey: .dose)
-        water = try container.decodeIfPresent(Int.self, forKey: .water)
-        temperature = try container.decodeIfPresent(Int.self, forKey: .temperature)
+        brewMethod = try container.decodeIfPresent(BrewMethod.self, forKey: .brewMethod)
+        dose = try container.decodeIfPresent(Double.self, forKey: .dose)
+        water = try container.decodeIfPresent(Double.self, forKey: .water)
+        temperature = try container.decodeIfPresent(Double.self, forKey: .temperature)
         brewTime = try container.decodeIfPresent(Int.self, forKey: .brewTime)
         grindSize = try container.decodeIfPresent(GrindSize.self, forKey: .grindSize)
     }
@@ -49,12 +52,23 @@ final class BrewLog: Codable, Identifiable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(tasting, forKey: .tasting)
-        try container.encode(brewMethod, forKey: .brewMethod)
+        try container.encodeIfPresent(brewMethod, forKey: .brewMethod)
         try container.encodeIfPresent(dose, forKey: .dose)
         try container.encodeIfPresent(water, forKey: .water)
         try container.encodeIfPresent(temperature, forKey: .temperature)
         try container.encodeIfPresent(brewTime, forKey: .brewTime)
         try container.encodeIfPresent(grindSize, forKey: .grindSize)
+    }
+    
+    /// Water-to-coffee ratio such as "1:16", when both amounts are known.
+    var ratio: String? {
+        guard let dose, let water, dose > 0 else { return nil }
+        return "1:" + (water / dose).formatted(.number.precision(.fractionLength(0...1)))
+    }
+    
+    /// Brew time formatted as m:ss.
+    var brewTimeText: String? {
+        guard let brewTime else { return nil }
+        return String(format: "%d:%02d", brewTime / 60, brewTime % 60)
     }
 }

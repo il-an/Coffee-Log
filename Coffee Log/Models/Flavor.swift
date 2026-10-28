@@ -14,8 +14,11 @@ final class Flavor: Codable, Identifiable {
         case id, name
     }
     
-    var id: UUID
-    var name: String
+    var id: UUID = UUID()
+    var name: String = ""
+    
+    @Relationship(inverse: \Tasting.flavors)
+    var tastings: [Tasting]? = []
     
     init(
         id: UUID = UUID(),

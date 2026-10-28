@@ -12,9 +12,16 @@ import SwiftData
 struct Coffee_LogApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            CoffeeBean.self,
+            Tasting.self,
+            BrewLog.self,
+            BrewMethod.self,
+            GrindSize.self,
+            Flavor.self,
+            Inventory.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        // Syncs through the CloudKit container declared in the entitlements.
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, cloudKitDatabase: .automatic)
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])

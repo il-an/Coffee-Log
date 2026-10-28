@@ -14,8 +14,11 @@ final class BrewMethod: Codable, Identifiable {
         case id, name
     }
     
-    var id: UUID
-    var name: String
+    var id: UUID = UUID()
+    var name: String = ""
+    
+    @Relationship(deleteRule: .nullify, inverse: \BrewLog.brewMethod)
+    var brewLogs: [BrewLog]? = []
     
     init(
         id: UUID = UUID(),

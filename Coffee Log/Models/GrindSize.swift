@@ -14,8 +14,11 @@ final class GrindSize: Codable, Identifiable {
         case id, name
     }
     
-    var id: UUID
-    var name: String
+    var id: UUID = UUID()
+    var name: String = ""
+    
+    @Relationship(deleteRule: .nullify, inverse: \BrewLog.grindSize)
+    var brewLogs: [BrewLog]? = []
     
     init(
         id: UUID = UUID(),

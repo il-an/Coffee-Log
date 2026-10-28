@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F483A74D309163B200BC55CE /* coffeelog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = coffeelog.xcodeproj; sourceTree = "<group>"; };
 		F4B17A5D2F0286F60017D2F4 /* Coffee Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B17A6E2F0286F70017D2F4 /* Coffee LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coffee LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B17A782F0286F70017D2F4 /* Coffee LogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coffee LogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F483A7E2309163B200BC55CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F483ACBE3091660F00BC55CE /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F483A74D309163B200BC55CE /* coffeelog.xcodeproj */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F4B17A542F0286F60017D2F4 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +108,7 @@
 				F4B17A712F0286F70017D2F4 /* Coffee LogTests */,
 				F4B17A7B2F0286F70017D2F4 /* Coffee LogUITests */,
 				F4B17A5E2F0286F60017D2F4 /* Products */,
+				F483ACBE3091660F00BC55CE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +228,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F4B17A5E2F0286F60017D2F4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F483A7E2309163B200BC55CE /* Products */;
+					ProjectRef = F483A74D309163B200BC55CE /* coffeelog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F4B17A5C2F0286F60017D2F4 /* Coffee Log */,
@@ -287,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Coffee Log/Coffee Log.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AWZQGRR4NQ;
@@ -320,6 +344,105 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Release/net10.0-maccatalyst/maccatalyst-arm64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Release/net10.0-maccatalyst/maccatalyst-x64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Debug/net10.0-maccatalyst/maccatalyst-arm64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliaanisimov.Coffee-Log";
@@ -343,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Coffee Log/Coffee Log.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AWZQGRR4NQ;
@@ -376,6 +500,105 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Release/net10.0-maccatalyst/maccatalyst-arm64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Release/net10.0-maccatalyst/maccatalyst-x64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Release/net10.0-maccatalyst/maccatalyst-x64",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/obj/Debug/net10.0-maccatalyst/maccatalyst-arm64/nativelibraries/Contents/MonoBundle",
+					"$(PROJECT_DIR)/old\\ csharp\\ code/coffeelog/coffeelog/bin/Debug/net10.0-maccatalyst/maccatalyst-arm64",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliaanisimov.Coffee-Log";
