@@ -79,7 +79,7 @@ struct CoffeeFormView: View {
 
     /// A text field with a menu of common values next to it.
     private func suggestionField(_ title: LocalizedStringKey, text: Binding<String>, prompt: String, options: [String]) -> some View {
-        HStack {
+        HStack(spacing: 12) {
             LabeledTextField(title, text: text, prompt: prompt)
             Menu("Suggestions", systemImage: "chevron.down.circle") {
                 ForEach(options, id: \.self) { option in
